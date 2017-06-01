@@ -2,7 +2,7 @@
 
 import os
 import sys
-import keystoneclient.v2_0.client as ksclient
+import keystoneclient.v3.client as ksclient
 import neutronclient.v2_0.client as nclient
 
 def usage():
