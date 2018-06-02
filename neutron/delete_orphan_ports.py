@@ -10,11 +10,12 @@ ports = c.list_ports()
 
 known_ips = set()
 
+
 for vm in vms:
     if vm.status == 'ACTIVE':
-        for net, ips in vm.networks.iteritems():
+        for net, ips in vm.addresses.iteritems():
             for ip in ips:
-                known_ips.add(ip)
+                known_ips.add(ip['addr'])
 
 print "known ip addresses of ACTIVE VM's: " + str(known_ips)
 
